@@ -1,0 +1,6 @@
+{
+  "name": "Gościniec Szpakówka",
+  "description": "Strona internetowa kameralnego guesthousu Gościniec Szpakówka w otulinie Puszczy Białowieskiej.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #1a2e1a;
+  --color-forest-mid: #2d4a2d;
+  --color-forest-light: #4a7a4a;
+  --color-gold: #c8a84b;
+  --color-gold-light: #e8cc80;
+  --color-cream: #f7f4ed;
+  --color-charcoal: #1e1e1b;
+  --color-muted-color: #6b6b5e;
+  --color-rule: #c8b87a;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --forest: #1a2e1a;
+  --forest-mid: #2d4a2d;
+  --forest-light: #4a7a4a;
+  --gold: #c8a84b;
+  --gold-light: #e8cc80;
+  --cream: #f7f4ed;
+  --charcoal: #1e1e1b;
+  --muted: #6b6b5e;
+  --rule: #c8b87a;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: #f7f4ed;
+  color: #1e1e1b;
+}
+
+/* Custom fade-in animations for Intersection Observer */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom glassmorphism and styled elements to avoid AI clichés */
+.sharp-img {
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--gold);
+}
+
+/* Luxury Editorial Tactile Noise Texture */
+.organic-noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.045;
+  z-index: 100;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Forest vector background accent for empty or text columns */
+.forest-vector-pattern {
+  background-image: radial-gradient(var(--forest-light) 1px, transparent 1px), radial-gradient(var(--forest-light) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.12;
+}
+
+/* Luxury geometric corners for premium feel */
+.deco-corners {
+  position: relative;
+}
+.deco-corners::before,
+.deco-corners::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--gold);
+  border-style: solid;
+  pointer-events: none;
+}
+.deco-corners::before {
+  top: 12px;
+  left: 12px;
+  border-width: 1px 0 0 1px;
+}
+.deco-corners::after {
+  bottom: 12px;
+  right: 12px;
+  border-width: 0 1px 1px 0;
+}
+
+/* Highlight underline link hover effect */
+.hover-gold-line {
+  position: relative;
+}
+.hover-gold-line::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--gold);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hover-gold-line:hover::after {
+  width: 100%;
+}
